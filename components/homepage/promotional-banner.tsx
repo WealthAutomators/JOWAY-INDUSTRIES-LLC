@@ -1,28 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { promotionalBanner } from "@/data/homepage";
-import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export function PromotionalBanner() {
   return (
-    <section className="py-12 md:py-16">
-      <Container>
-        <div className="relative overflow-hidden rounded-xl shadow-md">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-purple-900" />
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/5" />
-          <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-white/5" />
-          <div className="absolute right-1/4 top-1/2 h-32 w-32 -translate-y-1/2 rotate-45 bg-accent/10" />
-          <div className="relative flex flex-col items-start justify-center p-8 md:p-12 lg:p-16">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">
-              {promotionalBanner.title}
-            </h2>
-            <p className="mt-4 max-w-xl text-white/85 leading-relaxed">{promotionalBanner.description}</p>
-            <Button asChild size="lg" variant="accent" className="mt-8">
-              <Link href={promotionalBanner.buttonLink}>{promotionalBanner.buttonText}</Link>
-            </Button>
-          </div>
-        </div>
-      </Container>
+    <section className="relative min-h-[420px] overflow-hidden md:min-h-[480px]">
+      <Image
+        src={promotionalBanner.image}
+        alt={promotionalBanner.title}
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-foreground/45" />
+      <div className="relative mx-auto flex min-h-[420px] max-w-[1400px] flex-col items-start justify-center px-4 py-16 sm:px-6 md:min-h-[480px] lg:px-8">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-eucalyptus">Seasonal note</p>
+        <h2 className="mt-3 max-w-xl font-serif text-4xl text-card md:text-5xl">{promotionalBanner.title}</h2>
+        <p className="mt-4 max-w-lg text-base leading-relaxed text-card/85">{promotionalBanner.description}</p>
+        <Button asChild size="lg" className="mt-8 bg-card text-foreground hover:bg-ivory">
+          <Link href={promotionalBanner.buttonLink}>{promotionalBanner.buttonText}</Link>
+        </Button>
+      </div>
     </section>
   );
 }

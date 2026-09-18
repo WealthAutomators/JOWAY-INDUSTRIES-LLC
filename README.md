@@ -1,17 +1,20 @@
-# AAM Partners LLC
+# JOWAY INDUSTRIES LLC
 
-A production-quality, reusable ecommerce storefront template built with Next.js App Router, TypeScript, and Tailwind CSS.
+Contemporary Florida lifestyle storefront built on the existing Next.js ecommerce engine.
 
-This is the master template for AAM Partners LLC — a general marketplace selling electronics, home essentials, beauty, toys, pet supplies, and more. Duplicate this repository and swap brand assets, colors, and data to launch new stores without rewriting components.
+JOWAY INDUSTRIES LLC  
+2310 COCONUT LN  
+MERRITT ISLAND, FL 32952  
+jowayindustriesllc@gmail.com
 
 ## Tech Stack
 
-- **Next.js 15** (App Router)
+- **Next.js 16** (App Router)
+- **React 19**
 - **TypeScript**
 - **Tailwind CSS v4**
 - **shadcn/ui** (Radix primitives)
-- **Lucide Icons**
-- **Framer Motion** (subtle animations)
+- **Framer Motion**
 - **Embla Carousel**
 - **React Context** (cart, wishlist, recently viewed)
 - **localStorage** persistence (no backend)
@@ -30,13 +33,11 @@ npm run build   # Production build
 npm run start   # Start production server
 ```
 
-## Customizing for a New Store
+## Store content
 
-To rebrand this template for a new store, edit **only** these files:
-
-| What to change | Where |
+| What | Where |
 |---|---|
-| Company name, contact, social | `data/company.ts` |
+| Company name, address, email | `data/company.ts` |
 | Brand colors | `styles/theme.ts` + `app/globals.css` |
 | Navigation & footer links | `data/navigation.ts` |
 | Categories | `data/categories.ts` |
@@ -49,52 +50,24 @@ To rebrand this template for a new store, edit **only** these files:
 | Category images | `public/categories/` |
 | Product images | `public/products/` |
 
-Regenerate placeholder SVGs after changing products:
-
-```bash
-node scripts/generate-images.mjs
-```
-
-## Project Structure
-
-```
-app/                  # Next.js pages (App Router)
-components/
-  navbar/             # Sticky navigation with search
-  footer/             # Four-column footer
-  homepage/           # Homepage sections
-  product/            # Product cards, gallery, quick view
-  cart/               # Cart page
-  checkout/           # Checkout flow
-  shop/               # Shop with filters
-  ui/                 # Reusable UI primitives
-data/                 # All store content (JSON-like TS files)
-lib/                  # Utilities and constants
-hooks/                # Custom React hooks
-context/              # Cart, wishlist, recently viewed
-public/               # Static assets
-styles/               # Theme color tokens
-types/                # TypeScript interfaces
-```
-
 ## Features
 
-- Full homepage with 12 sections (hero, categories, deals, best sellers, etc.)
+- Editorial homepage with a full-width cinematic hero
 - Working cart with add/remove/quantity and localStorage persistence
 - Working wishlist with localStorage persistence
 - Live search filtering in navbar and shop page
 - Quick view modal on product cards
-- Product detail page with gallery, accordion, related products
+- Product detail page with gallery, reviews, related products
 - Shop page with sidebar filters, sorting, and pagination
-- Checkout with order summary and payment form
+- Demo checkout (no real payment processing)
 - Fully responsive (mobile, tablet, desktop)
-- 26 products across 6 categories
 
 ## Checkout
 
-Use coupon code `SAVE10` on the cart page for a 10% discount.
+Use coupon code `SAVE10` on the cart page for a 10% discount. This is a demonstration storefront — no live payments are processed.
 
-## Brand Colors
+## Brand colors
 
-- **Primary:** Royal Purple `#7C3AED`
-- **Accent:** Amber `#F59E0B`
+- **Primary:** Deep coastal green `#2F5D50`
+- **Accent:** Terracotta `#C47A5A` (used sparingly)
+- **Background:** Warm ivory `#F7F4EE`

@@ -8,8 +8,16 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function WishlistContent() {
-  const { wishlist } = useWishlist();
+  const { wishlist, isHydrated } = useWishlist();
   const products = wishlist.map((id) => getProductById(id)).filter(Boolean);
+
+  if (!isHydrated) {
+    return (
+      <Container className="flex min-h-[40vh] items-center justify-center py-16">
+        <p className="text-sm text-muted-foreground">Loading wishlist…</p>
+      </Container>
+    );
+  }
 
   if (products.length === 0) {
     return (

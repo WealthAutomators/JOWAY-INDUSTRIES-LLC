@@ -36,14 +36,16 @@ export function ShopContent() {
   const initialSearch = searchParams.get("search") || "";
   const initialCategory = searchParams.get("category") || "";
   const initialSale = searchParams.get("sale") === "true";
+  const initialFeatured = searchParams.get("featured") === "true";
 
   const [search, setSearch] = useState(initialSearch);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     initialCategory ? [initialCategory] : []
   );
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 150]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 300]);
   const [inStockOnly, setInStockOnly] = useState(false);
   const [saleOnly, setSaleOnly] = useState(initialSale);
+  const featuredOnly = initialFeatured;
   const [sort, setSort] = useState("featured");
   const [page, setPage] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -78,8 +80,12 @@ export function ShopContent() {
       result = result.filter((p) => p.salePrice);
     }
 
+    if (featuredOnly) {
+      result = result.filter((p) => p.featured);
+    }
+
     return sortProducts(result, sort);
-  }, [search, selectedCategories, priceRange, inStockOnly, saleOnly, sort]);
+  }, [search, selectedCategories, priceRange, inStockOnly, saleOnly, featuredOnly, sort]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
   const paginatedProducts = filteredProducts.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
@@ -110,7 +116,9 @@ export function ShopContent() {
   return (
     <Container className="py-8 md:py-12">
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Shop</h1>
+        <h1 className="font-serif text-4xl tracking-tight">
+          {featuredOnly ? "The JOWAY Edit" : "Shop"}
+        </h1>
         <p className="mt-2 text-muted-foreground">{filteredProducts.length} products</p>
       </div>
 
@@ -166,7 +174,7 @@ export function ShopContent() {
                 onClick={() => {
                   setSearch("");
                   setSelectedCategories([]);
-                  setPriceRange([0, 150]);
+                  setPriceRange([0, 300]);
                   setInStockOnly(false);
                   setSaleOnly(false);
                   setPage(1);

@@ -1,22 +1,16 @@
 export const company = {
-  name: "AAM Partners LLC",
-  tagline: "Everything You Need. Delivered with Confidence.",
+  name: "JOWAY INDUSTRIES LLC",
+  shortName: "JOWAY",
+  tagline: "Modern Living, Made Easy.",
   description:
-    "AAM Partners LLC brings together quality products across multiple categories, helping families find everything they need in one trusted online marketplace.",
-  email: "aampartnersllc1@gmail.com",
+    "JOWAY INDUSTRIES LLC is a contemporary lifestyle retailer offering well-designed products for the home, table, weekend, and everyday carry. We focus on useful objects, clear materials, and a calm shopping experience.",
+  email: "jowayindustriesllc@gmail.com",
   address: {
-    street: "717 S Military Hwy",
-    city: "Virginia Beach",
-    state: "VA",
-    zip: "23464",
+    street: "2310 COCONUT LN",
+    city: "MERRITT ISLAND",
+    state: "FL",
+    zip: "32952",
     country: "United States",
   },
-  social: {
-    instagram: "https://instagram.com/aampartnersllc",
-    facebook: "https://facebook.com/aampartnersllc",
-    twitter: "https://twitter.com/aampartnersllc",
-    pinterest: "https://pinterest.com/aampartnersllc",
-  },
-  hours: "Mon–Fri: 9am–6pm EST",
-  copyright: `© ${new Date().getFullYear()} AAM Partners LLC. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} JOWAY INDUSTRIES LLC. All rights reserved.`,
 };

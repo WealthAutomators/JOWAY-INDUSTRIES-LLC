@@ -2,7 +2,6 @@ import { NavLink } from "@/types";
 import { categories } from "./categories";
 
 export const navigationLinks: NavLink[] = [
-  { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   {
     label: "Categories",
@@ -13,27 +12,31 @@ export const navigationLinks: NavLink[] = [
     })),
   },
   { label: "New Arrivals", href: "/new-arrivals" },
-  { label: "Best Sellers", href: "/best-sellers" },
+  { label: "The Edit", href: "/#joway-edit" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerLinks = {
+  shop: [
+    { label: "Shop All", href: "/shop" },
+    { label: "Categories", href: "/categories" },
+    { label: "New Arrivals", href: "/new-arrivals" },
+    { label: "Best Sellers", href: "/best-sellers" },
+  ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Careers", href: "/contact" },
-    { label: "FAQs", href: "/faq" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+    { label: "FAQ", href: "/faq" },
   ],
   customerCare: [
-    { label: "Track Order", href: "/track-order" },
+    { label: "Shipping", href: "/shipping" },
     { label: "Returns", href: "/returns" },
-    { label: "Shipping Policy", href: "/shipping" },
-    { label: "Support", href: "/contact" },
+    { label: "Track Order", href: "/track-order" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
     { label: "Refund Policy", href: "/refund" },
   ],
 };
